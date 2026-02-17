@@ -161,7 +161,7 @@ export const updateProduct = async (req, res) => {
     product.productPrice = productPrice || product.productPrice;
     product.category = category || product.category;
     product.brand = brand || product.brand;
-    product.productImg = productImg || product.productImg;
+    product.productImg = updatedImages;
 
     await product.save();
 
