@@ -15,6 +15,7 @@ Thumbs.db
 # Node modules
 # ------------------------------
 node_modules/
+images/
 
 # ------------------------------
 # Build folders
