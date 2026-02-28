@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import userLogo from "../assets/userLogo.jpg";
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,21 @@ const Cart = () => {
   const API = "http://localhost:8000/api/v1/cart";
   const accessToken = localStorage.getItem("accessToken");
 
+  const loadCart = async () => {
+    try {
+      const res = await axios.get(API, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      if (res.data.success) {
+        dispatch(setCart(res.data.cart));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleUpdateQuantity = async (productId, type) => {
     try {
       const res = await axios.put(
@@ -36,13 +51,12 @@ const Cart = () => {
           },
         },
       );
-      console.log(res.data); //added for checking
 
       if (res.data.success) {
         dispatch(setCart(res.data.cart));
       }
     } catch (error) {
-      console.log(error.response?.data || error.message);
+      console.log(error);
     }
   };
 
@@ -64,6 +78,10 @@ const Cart = () => {
     }
   };
 
+  useEffect(() => {
+    loadCart();
+  }, [dispatch]);
+
   return (
     <div className="pt-20 bg-gray-50 min-h-screen">
       {cart?.items?.length > 0 ? (
@@ -72,10 +90,10 @@ const Cart = () => {
             Shopping Cart
           </h1>
           <div className="max-w-7xl mx-auto flex gap-7">
-            <div className="flex flex-col gap-5 ">
-              {cart?.items?.map((product) => {
+            <div className="flex flex-col gap-5 flex-1">
+              {cart?.items?.map((product, index) => {
                 return (
-                  <Card key={product.productId._id}>
+                  <Card key={index}>
                     <div className="flex justify-between items-center pr-7">
                       <div className="flex items-center w-[350px]">
                         <img

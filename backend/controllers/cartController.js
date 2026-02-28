@@ -114,15 +114,7 @@ export const updateQuantity = async (req, res) => {
       item.quantity += 1;
     }
 
-    if (type === "decrease") {
-      if (item.quantity === 1) {
-        cart.items = cart.items.filter(
-          (i) => i.productId.toString() !== productId,
-        );
-      } else {
-        item.quantity -= 1;
-      }
-    }
+    if (type === "decrease" && item.quantity > 1) item.quantity -= 1;
 
     cart.totalPrice = cart.items.reduce(
       (acc, item) => acc + item.price * item.quantity,
@@ -133,7 +125,7 @@ export const updateQuantity = async (req, res) => {
 
     cart = await cart.populate("items.productId");
 
-    res.status(200).json({ succes: true, cart });
+    res.status(200).json({ success: true, cart });
   } catch (error) {
     return res.status(500).json({
       success: false,
@@ -160,8 +152,9 @@ export const removeFromCart = async (req, res) => {
       0,
     );
 
-    await cart.save();
     cart = await cart.populate("items.productId");
+    await cart.save();
+
     res.status(200).json({
       success: true,
       cart,

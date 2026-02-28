@@ -13,6 +13,7 @@ const ProductCard = ({ product, loading }) => {
   const accessToken = localStorage.getItem("accessToken");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const addToCart = async (productId) => {
     try {
       const res = await axios.post(
@@ -40,6 +41,7 @@ const ProductCard = ({ product, loading }) => {
           <Skeleton className="w-full h-full rounded-lg" />
         ) : (
           <img
+            onClick={() => navigate(`/products/${product._id}`)}
             src={productImg[0]?.url}
             alt=""
             className="w-full h-full transition-transform duration-300 hover:scale-105 cursor-pointer"
