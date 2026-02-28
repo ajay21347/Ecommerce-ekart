@@ -64,7 +64,7 @@ const FilterSidebar = ({
               checked={category === item}
               onChange={() => handleCategoryClick(item)}
             />
-            <label htmlFor="">{item}</label>
+            <label>{item}</label>
           </div>
         ))}
       </div>

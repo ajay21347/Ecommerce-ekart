@@ -68,9 +68,9 @@ const Products = () => {
       (p) => p.productPrice >= priceRange[0] && p.productPrice <= priceRange[1],
     );
 
-    if (sortOrder === "lowtoHigh") {
+    if (sortOrder === "lowToHigh") {
       filtered.sort((a, b) => a.productPrice - b.productPrice);
-    } else if (sortOrder === "hightoLow") {
+    } else if (sortOrder === "highToLow") {
       filtered.sort((a, b) => b.productPrice - a.productPrice);
     }
 
@@ -100,14 +100,14 @@ const Products = () => {
         {/*Main product section*/}
         <div className="flex flex-col flex-1">
           <div className="flex justify-end mb-4">
-            <Select>
+            <Select onValueChange={(value) => setSortOrder(value)}>
               <SelectTrigger className="w-[200px]">
                 <SelectValue placeholder="Sort by Price" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="lowtoHigh">Price: Low to High</SelectItem>
-                  <SelectItem value="hightoLow">Price: High to Low</SelectItem>
+                  <SelectItem value="lowToHigh">Price: Low to High</SelectItem>
+                  <SelectItem value="highToLow">Price: High to Low</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
