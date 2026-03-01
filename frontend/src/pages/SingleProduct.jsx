@@ -16,8 +16,8 @@ const SingleProduct = () => {
     <div className="pt-20 py-10 max-w-7xl mx-auto">
       <Breadcrums product={product} />
       <div className="mt-10 grid grid-cols-2 items-start">
-        <ProductImg />
-        <ProductDesc />
+        <ProductImg images={product.productImg} />
+        <ProductDesc product={product} />
       </div>
     </div>
   );
