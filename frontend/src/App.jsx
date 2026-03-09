@@ -20,6 +20,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import UserInfo from "./pages/admin/UserInfo";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SingleProduct from "./pages/SingleProduct";
+import AddressForm from "./pages/AddressForm";
 Footer;
 
 const router = createBrowserRouter([
@@ -102,10 +103,18 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/address/",
+    element: (
+      <ProtectedRoute>
+        <AddressForm />
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "/dashboard",
     element: (
       <ProtectedRoute adminOnly={true}>
-        <Navbar/>
+        <Navbar />
         <Dashboard />
       </ProtectedRoute>
     ),
