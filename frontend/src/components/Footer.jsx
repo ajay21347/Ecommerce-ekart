@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import Logo from ".../assets/Logo.png"
 import {
   FaFacebook,
   FaInstagram,
@@ -9,6 +8,11 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Subscribed!");
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-200 py-10">
       <div className="max-w-7xl mx-auto px-4 md:flex md:justify-between">
@@ -18,13 +22,13 @@ const Footer = () => {
             <img src="/ekart.png" alt="" className="w-32" />
           </Link>
           <p className="mt-2 text-sm">
-            Powering Your World wiht the Best in Electronics.
+            Powering Your World with the Best in Electronics.
           </p>
           <p className="mt-2 text-sm">
             123 Electronics St, Style City, NY 10001
           </p>
           <p className="text-sm">Email: support@Zoop.com</p>
-          <p className="text-sm">Phone :(123) 456-7890</p>
+          <p className="text-sm">Phone : (123) 456-7890</p>
         </div>
         {/*Customer service link*/}
         <div className="mb-6 md:mb-0">
@@ -43,19 +47,25 @@ const Footer = () => {
           <p className="mt-2 text-sm">
             Subscribe to get special offers, free giveaways,and more.
           </p>
-          <form action="" className="mt-4-flex">
+          <form onSubmit={handleSubmit} className="mt-4 flex">
             <input
               type="email"
               placeholder="Your email address"
-              className="w-full p-2 rounded-l-md bg-white text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="flex-1 p-2 rounded-l-md bg-white text-gray-700 focus:outline-none"
             />
             <button
               type="submit"
-              className="bg-pink-600   text-white-px rounded-r-md hover:bg-red-700"
+              className="bg-pink-600 px-6 py-2 text-white text-sm font-medium rounded-r-md hover:bg-red-700"
             >
               Subscribe
             </button>
           </form>
+          <div className="flex gap-4 mt-4 text-xl">
+            <FaFacebook className="cursor-pointer hover:text-blue-500" />
+            <FaInstagram className="cursor-pointer hover:text-blue-500" />
+            <FaPinterest className="cursor-pointer hover:text-blue-500" />
+            <FaTwitterSquare className="cursor-pointer hover:text-blue-400" />
+          </div>
         </div>
       </div>
       {/*bottom section*/}

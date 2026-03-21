@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import axios from "axios";
 import { setUser } from "@/redux/userSlice";
+import MyOrder from "./MyOrder";
 
 const Profile = () => {
   const { user } = useSelector((store) => store.user);
@@ -216,7 +217,9 @@ const Profile = () => {
             </div>
           </div>
         </TabsContent>
-        <TabsContent value="orders"></TabsContent>
+        <TabsContent value="orders">
+          <MyOrder/>
+        </TabsContent>
       </Tabs>
     </div>
   );

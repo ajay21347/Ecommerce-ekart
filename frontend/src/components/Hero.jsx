@@ -1,12 +1,11 @@
 import React from "react";
 import { Button } from "./ui/button";
 
-
 const Hero = () => {
   return (
     <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center min-h-[500px]">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Latest Electronics at Best Prices
@@ -27,13 +26,11 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relativeh-full w-full">
             <img
-              src="/ekart-hero1.png"
-              alt=""
-              width={500}
-              height={400}
-              className="rounded-lg shadow-2xl"
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+              alt="Electronics"
+              className="w-full h-full object-cover rounded-lg"
             />{" "}
           </div>
         </div>

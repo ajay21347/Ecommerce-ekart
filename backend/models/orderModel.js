@@ -27,10 +27,13 @@ const orderSchema = new mongoose.Schema(
       default: "Pending",
     },
 
-    //Razorpay fields
-    razorpayOrderId: { type: String },
-    razorpayPayementId: { type: String },
-    razorpaySignature: { type: String },
+    // Stripe fields
+    stripePaymentIntentId: {
+      type: String,
+    },
+    stripeChargeId: {
+      type: String,
+    },
   },
   { timestamps: true },
 );
