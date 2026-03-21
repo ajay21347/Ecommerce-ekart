@@ -1,506 +1,206 @@
-E-Commerce Website
+# 🛒 E-Commerce Website (Full Stack)
 
+A scalable and feature-rich **Full-Stack E-Commerce Web Application** built using **React (Vite), Redux Toolkit, Node.js, Express, and MongoDB**.
 
+The platform enables users to browse products, manage carts, and place orders, while providing admins with tools to manage products and platform data.
 
-A full-stack E-Commerce Web Application built using React (Vite), Redux, Node.js, Express, and MongoDB.
+---
 
-The platform allows users to browse products, add them to the cart, manage profiles, and place orders. It also includes admin functionality for product management.
+## 🚀 Features
 
+### 👤 User Features
 
+* User Authentication (Signup & Login)
+* Email Verification using OTP
+* Browse and Search Products
+* View Product Details
+* Add to Cart & Update Cart Items
+* Checkout with Address Form
+* User Profile Management
+* Protected Routes for authenticated access
 
-🚀 Features
+---
 
-👤 User Features
+### 🛍 Product Features
 
+* Product Listing Page
+* Product Detail Page
+* Product Image Upload & Display
+* Category-based Filtering
 
+---
 
-User Signup \& Login
+### 🧑‍💼 Admin Features
 
+* Admin Dashboard
+* Add / Update / Delete Products
+* Upload Product Images
 
+---
 
-Email Verification using OTP
+### 🔐 Security Features
 
+* JWT Authentication
+* Protected API Routes
+* Email OTP Verification
+* Secure Environment Variables
 
+---
 
-Browse Products
+## 🛠 Tech Stack
 
+### Frontend
 
+* React (Vite)
+* Redux Toolkit
+* Tailwind CSS
+* Axios
+* React Router
 
-Product Details Page
+### Backend
 
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* Multer (Image Upload)
 
+### Other Tools
 
-Add to Cart
+* JWT Authentication
+* Email OTP Verification
+* REST API Architecture
 
+---
 
+## 📂 Project Structure
 
-Update Cart Items
-
-
-
-Checkout with Address Form
-
-
-
-User Profile Management
-
-
-
-Protected Routes for authenticated users
-
-
-
-🛍 Product Features
-
-
-
-Product Listing
-
-
-
-Product Details Page
-
-
-
-Product Images
-
-
-
-Product Filtering
-
-
-
-🧑‍💼 Admin Features
-
-
-
-Admin Dashboard
-
-
-
-Product Management
-
-
-
-Image Upload for Products
-
-
-
-🔐 Security Features
-
-
-
-Authentication Middleware
-
-
-
-Protected Routes
-
-
-
-Email Verification
-
-
-
-Environment Variables for Sensitive Data
-
-
-
-🛠 Tech Stack
-
-Frontend
-
-
-
-React (Vite)
-
-
-
-Redux Toolkit
-
-
-
-Tailwind CSS
-
-
-
-Axios
-
-
-
-React Router
-
-
-
-Backend
-
-
-
-Node.js
-
-
-
-Express.js
-
-
-
-MongoDB
-
-
-
-Mongoose
-
-
-
-Multer (for image uploads)
-
-
-
-Other Tools
-
-
-
-JWT Authentication
-
-
-
-Email OTP Verification
-
-
-
-REST APIs
-
-
-
-📂 Project Structure
-
+```
 E-COMMERCE-WEBSITE
-
 │
-
 ├── backend
-
-│   │
-
 │   ├── controllers
-
-│   │   ├── cartController.js
-
-│   │   ├── productController.js
-
-│   │   └── userController.js
-
-│   │
-
 │   ├── database
-
-│   │   └── db.js
-
-│   │
-
 │   ├── emailVerify
-
-│   │   ├── sendOTPMail.js
-
-│   │   └── verifyEmail.js
-
-│   │
-
 │   ├── middleware
-
-│   │   ├── isAuthenticated.js
-
-│   │   └── multer.js
-
-│   │
-
 │   ├── models
-
-│   │   ├── cartModel.js
-
-│   │   ├── orderModel.js
-
-│   │   ├── productModel.js
-
-│   │   ├── sessionModel.js
-
-│   │   └── userModel.js
-
-│   │
-
 │   ├── routes
-
-│   │   ├── cartRoute.js
-
-│   │   ├── productRoute.js
-
-│   │   └── userRoute.js
-
-│   │
-
 │   ├── utils
-
 │   ├── .env
-
-│   ├── package.json
-
 │   └── server.js
-
 │
-
 ├── frontend
-
-│   │
-
 │   ├── public
-
-│   │   ├── ekart.png
-
-│   │   └── vite.svg
-
-│   │
-
 │   ├── src
-
-│   │
-
-│   │   ├── assets
-
-│   │   │   └── images
-
-│   │
-
 │   │   ├── components
-
-│   │   │   ├── Breadcrumbs.jsx
-
-│   │   │   ├── Features.jsx
-
-│   │   │   ├── FilterSidebar.jsx
-
-│   │   │   ├── Footer.jsx
-
-│   │   │   ├── Hero.jsx
-
-│   │   │   ├── ImageUpload.jsx
-
-│   │   │   ├── Navbar.jsx
-
-│   │   │   ├── ProductCard.jsx
-
-│   │   │   ├── ProductDesc.jsx
-
-│   │   │   ├── ProductImg.jsx
-
-│   │   │   ├── ProtectedRoute.jsx
-
-│   │   │   └── Sidebar.jsx
-
-│   │
-
 │   │   ├── pages
-
-│   │   │   ├── admin
-
-│   │   │   ├── AddressForm.jsx
-
-│   │   │   ├── Cart.jsx
-
-│   │   │   ├── Dashboard.jsx
-
-│   │   │   ├── Home.jsx
-
-│   │   │   ├── Login.jsx
-
-│   │   │   ├── Products.jsx
-
-│   │   │   ├── Profile.jsx
-
-│   │   │   ├── Signup.jsx
-
-│   │   │   ├── SingleProduct.jsx
-
-│   │   │   ├── Verify.jsx
-
-│   │   │   └── VerifyEmail.jsx
-
-│   │
-
 │   │   ├── redux
-
-│   │   │   ├── productSlice.js
-
-│   │   │   ├── userSlice.js
-
-│   │   │   └── store.js
-
-│   │
-
+│   │   ├── assets
 │   │   ├── lib
-
-│   │   │   └── utils.js
-
-│   │
-
 │   │   ├── App.jsx
-
-│   │   ├── main.jsx
-
-│   │   └── index.css
-
-│   │
-
-│   ├── package.json
-
+│   │   └── main.jsx
 │   └── vite.config.js
-
 │
-
 └── README.md
+```
 
-⚙️ Installation \& Setup
+---
 
-1️⃣ Clone the repository
+## ⚙️ Installation & Setup
 
+### 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/yourusername/ecommerce-website.git
-
 cd ecommerce-website
+```
 
-2️⃣ Setup Backend
+---
 
+### 2️⃣ Backend Setup
+
+```bash
 cd backend
-
 npm install
+```
 
+Create `.env` file:
 
-
-Create .env
-
-
-
+```
 PORT=5000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_password
+```
 
-MONGO\_URI=your\_mongodb\_connection
+Run backend:
 
-JWT\_SECRET=your\_secret\_key
-
-EMAIL\_USER=your\_email
-
-EMAIL\_PASS=your\_email\_password
-
-
-
-Run backend server:
-
-
-
+```bash
 npm start
+```
 
-3️⃣ Setup Frontend
+---
 
+### 3️⃣ Frontend Setup
+
+```bash
 cd frontend
-
 npm install
-
 npm run dev
+```
 
+Frontend runs at:
 
-
-Frontend will run on:
-
-
-
+```
 http://localhost:5173
+```
 
-🔌 API Endpoints (Example)
+---
 
-User APIs
+## 🔌 API Endpoints
 
-POST /api/user/signup
+### 👤 User APIs
 
-POST /api/user/login
+* `POST /api/user/signup`
+* `POST /api/user/login`
+* `POST /api/user/verify-email`
+* `GET /api/user/profile`
 
-POST /api/user/verify-email
+### 🛍 Product APIs
 
-GET  /api/user/profile
+* `GET /api/products`
+* `GET /api/products/:id`
+* `POST /api/products` (Admin)
 
-Product APIs
+### 🛒 Cart APIs
 
-GET /api/products
+* `POST /api/cart/add`
+* `GET /api/cart`
+* `DELETE /api/cart/remove`
 
-GET /api/products/:id
+---
 
-POST /api/products (admin)
+## 📸 Application Screens
 
-Cart APIs
+* Home Page
+* Product Listing Page
+* Product Details Page
+* Cart Page
+* Login / Signup Page
+* Email Verification Page
+* Admin Dashboard
 
-POST /api/cart/add
+---
 
-GET /api/cart
+## 👨‍💻 Author
 
-DELETE /api/cart/remove
+**Ajay Bhandari**
 
-📸 Screens (Typical Pages)
+---
 
+## 📌 Note
 
+This project is built for learning and demonstration purposes and can be extended into a production-ready application.
 
-Home Page
-
-
-
-Product Listing
-
-
-
-Product Details
-
-
-
-Cart Page
-
-
-
-Login / Signup
-
-
-
-Email Verification
-
-
-
-Admin Dashboard
-
-
-
-📈 Future Improvements
-
-
-
-Payment Gateway Integration ( Razorpay)
-
-
-
-Order Tracking
-
-
-
-Wishlist
-
-
-
-Product Reviews \& Ratings
-
-
-
-Search with Filters
-
-
-
-Pagination
-
-
-
-👨‍💻 Author
-
-Ajay Bhandari
-
+---
