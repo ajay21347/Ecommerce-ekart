@@ -26,7 +26,7 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="relativeh-full w-full">
+          <div className="relative h-full w-full">
             <img
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
               alt="Electronics"
